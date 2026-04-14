@@ -1,0 +1,73 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #faf8f4;
+  color: #1a1a1a;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+input, textarea, select {
+  font-family: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Responsive grid overrides */
+@media (max-width: 768px) {
+  /* Catalog grid: 2 columns on tablet */
+  .catalog-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  /* Stores grid: 1 column on tablet */
+  .stores-grid {
+    grid-template-columns: 1fr !important;
+  }
+  /* Appointments: stack columns */
+  .appointments-grid {
+    grid-template-columns: 1fr !important;
+  }
+  /* Feature strip: stack */
+  .feature-strip {
+    grid-template-columns: 1fr !important;
+  }
+  .feature-strip > div {
+    border-right: none !important;
+    border-bottom: 1px solid #e8e0d0;
+  }
+  .feature-strip > div:last-child {
+    border-bottom: none;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Catalog grid: 1 column on mobile */
+  .catalog-grid {
+    grid-template-columns: 1fr !important;
+  }
+  /* Time slots: 2 columns on mobile */
+  .time-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
